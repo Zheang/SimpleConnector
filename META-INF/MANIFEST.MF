@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: Zheang
+ConnectorBundle-FrameworkVersion: 1.0
+ConnectorBundle-Name: icf.bundle
+ConnectorBundle-Version: 1.0
