@@ -135,13 +135,15 @@ public class MyFlatFileHelper {
 		List<ConnectorObject> rst = new ArrayList<ConnectorObject>();
 		for (Map<String, String> account : accounts) {
 			boolean match = true;
-			for (String key : arg1.keySet()) {
-				if (account.containsKey(key)
-						&& account.get(key).equals(arg1.get(key)))
-					continue;
-				else {
-					match = false;
-					break;
+			if(arg1 != null) {
+				for (String key : arg1.keySet()) {
+					if (account.containsKey(key)
+							&& account.get(key).equals(arg1.get(key)))
+						continue;
+					else {
+						match = false;
+						break;
+					}
 				}
 			}
 			if (match) {
@@ -156,6 +158,8 @@ public class MyFlatFileHelper {
 		for (String key : header) {
 			conObjBld.addAttribute(key, account.get(key));
 		}
+		conObjBld.setUid(account.get("uid"));
+		conObjBld.setName(account.get("uid"));
 		return conObjBld.build();
 	}
 
